@@ -47,3 +47,13 @@ Crea un entorno virtual de python. Usa el siguiente comando dentro de la carpeta
 - Una vez dentro de la carpeta de la app, ejecuta el siguiente comando en la terminal.
 
 > python3 app.py
+
+
+
+### Créditos
+
+* Jhon Aldana
+* Javier Bedoya
+* Wilson Fino
+* Ramón Castaño
+* Miguel Sánchez
