@@ -19,3 +19,10 @@ Si no funciona, usa simplemente pip en vez de pip3.
 * Google Cloud Account - Free
 - Habilita el recurso Google Sheets API
 - Habilita el recurso Google Drive API
+
+## Ejecución
+
+Una vez dentro de la carpeta de la app,
+ejecuta el siguiente comando en la terminal.
+
+> python3 app.py
