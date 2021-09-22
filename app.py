@@ -60,8 +60,10 @@ class GoogleForms(unittest.TestCase):
         time.sleep(1)
         impediments.send_keys(dictionary1['impediments']) 
         time.sleep(1)
-        #submit_button.click() 
-        # submit_button.click() presiona el botón de enviar del formulario.
+
+        #submit_button.click()  # BOTON DE ENVIAR !!!
+        # ***Descomenta la linea anterior para que se envie el formulario***
+        
         time.sleep(30)
         # Esperamos unos segundos antes de cerrar la ventana del navegador.
     
