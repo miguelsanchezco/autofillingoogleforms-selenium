@@ -44,6 +44,7 @@ Crea un entorno virtual de python. Usa el siguiente comando dentro de la carpeta
 - Clona el repositorio.
 - Instala los 4 paquetes requeridos con el comando pip o pi3
 - Descarga el archivo json de Google Cloud - Ver instrucciones -
+- Descarga el chromedriver compatible con la versión de tu navegador Chrome.
 - Una vez dentro de la carpeta de la app, ejecuta el siguiente comando en la terminal.
 
 > python3 app.py
