@@ -23,8 +23,6 @@ Requerimientos:
   -  pyunitreport
 
 
-
-
 * **Google Cloud - Free Account**
 
   -  Habilita el recurso Google Sheets API
@@ -34,8 +32,16 @@ Requerimientos:
   -  En la configuración de Google Sheets crea una credencial - Cuenta de Servicio - Crea una key o llave JWT - Descarga el archivo .json y añadelo dentro de la carpeta creds
 
 
-## Ejecución
 
+### Recomendación:
+Crea un entorno virtual de python. Usa el siguiente comando dentro de la carpeta en la cual vas a clonar el repositorio.
+> python3 -m venv venv 
+
+
+
+### Ejecución
+
+Clona el repositorio.
 Una vez dentro de la carpeta de la app,
 ejecuta el siguiente comando en la terminal.
 
