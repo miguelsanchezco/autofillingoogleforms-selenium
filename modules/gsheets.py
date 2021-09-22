@@ -2,12 +2,19 @@ from datetime import datetime
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
+# Edita los siguientes 2 valores para ajustarlo a tus necesidades
+GOOGLE_SHEET_NAME = "Daily-Infinity-CONSOLIDADO"
+CREDS_GOOGLE_CLOUD_FILE_PATH = './creds/credsGoogleCloud.json'
+# ATENCION: dentro del archivo .json encontrarás un email,
+# añade este email como usuario que puede modificar tu hoja de google sheets 
+# de esta forma podrá acceder a ella y realizar la lectura de datos.
+
 scope = [
     'https://www.googleapis.com/auth/spreadsheets',
     'https://www.googleapis.com/auth/drive'
 ]
 
-creds = ServiceAccountCredentials.from_json_keyfile_name("./creds/credsGoogleCloud.json", scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name(CREDS_GOOGLE_CLOUD_FILE_PATH, scope)
 client=gspread.authorize(creds)
 
 def gsheets():
@@ -15,7 +22,7 @@ def gsheets():
     dictionary = {}
 
     # data_sheet is used to access to the data
-    data_sheet = client.open("Daily-Infinity-CONSOLIDADO").sheet1
+    data_sheet = client.open(GOOGLE_SHEET_NAME).sheet1
     # You should replace de name 'Daily-Infinity-CONSOLIDADO' for 
     # your own google sheets name file ***
 
@@ -25,6 +32,7 @@ def gsheets():
     # Actual date! 
     today = datetime.now()
     today = today.strftime("%d/%m/%Y")
+    # Transformamos la fecha a nuestro formato dia/mes/año
     
     #serching for the coincident dates and saving data
     for index,date in enumerate(dates):
