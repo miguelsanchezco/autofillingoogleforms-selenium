@@ -21,7 +21,7 @@ print(f'Data:\n{dictionary1}\n')
 class GoogleForms(unittest.TestCase):
 
     
-    def setUp(self):  # self - cls
+    def setUp(self):  
         # Prepara el entorno de la prueba
         # https://chromedriver.chromium.org/downloads 
         # You must download the chromedriver compatible with your browser
@@ -33,8 +33,8 @@ class GoogleForms(unittest.TestCase):
 
     def test_filling_data(self):
         # automatizacion
-        # selectores xpath
         driver = self.driver
+        # selectores xpath - encontramos los campos donde insertaremos la data
         names = driver.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div[2]/textarea')
         ids = driver.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div[2]/textarea')
         email = driver.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[1]/input')
@@ -44,8 +44,10 @@ class GoogleForms(unittest.TestCase):
         impediments = driver.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[1]/input')
         submit_button = driver.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[3]/div[1]/div[1]/div/span/span')
         
+        # insertamos la data almacenada en el diccionario en el campo correspondiente.
         names.send_keys(dictionary1['names'])
-        time.sleep(1)
+        # Hacemos una pausa de 1 seg. para ver la informacion que se agrega.
+        time.sleep(1) 
         ids.send_keys(dictionary1['ids']) 
         time.sleep(1)
         email.send_keys(dictionary1['email'])
@@ -58,10 +60,11 @@ class GoogleForms(unittest.TestCase):
         time.sleep(1)
         impediments.send_keys(dictionary1['impediments']) 
         time.sleep(1)
-        submit_button.click()
+        #submit_button.click() 
+        # submit_button.click() presiona el botón de enviar del formulario.
         time.sleep(30)
+        # Esperamos unos segundos antes de cerrar la ventana del navegador.
     
-
     
     def tearDown(self):
         #cerrar navegador
@@ -69,4 +72,6 @@ class GoogleForms(unittest.TestCase):
 
 if __name__ == "__main__":
 
+    # se corre el test
     unittest.main(verbosity=2,testRunner=HTMLTestRunner(output='', report_name='autofillingoogleforms'))
+    # se crea un reporte html

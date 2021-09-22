@@ -7,7 +7,7 @@ scope = [
     'https://www.googleapis.com/auth/drive'
 ]
 
-creds = ServiceAccountCredentials.from_json_keyfile_name("./creds/sheets.json", scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name("./creds/credsGoogleCloud.json", scope)
 client=gspread.authorize(creds)
 
 def gsheets():
@@ -26,7 +26,6 @@ def gsheets():
     today = datetime.now()
     today = today.strftime("%d/%m/%Y")
     
-
     #serching for the coincident dates and saving data
     for index,date in enumerate(dates):
         
@@ -39,11 +38,13 @@ def gsheets():
             # title could be : Ayer? Hoy? Impedimientos
             title = data_sheet.cell(row,2)
             title = str(title.value)
-
+            # assignments
             if title == 'Ayer?':
                 dictionary['yesterday'] = data_daily
+
             elif title == 'Hoy?':
                 dictionary['today'] = data_daily
+
             elif title == 'Impedimentos':
                 dictionary['impediments'] = data_daily
 
