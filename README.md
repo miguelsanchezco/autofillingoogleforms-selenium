@@ -1,24 +1,38 @@
 # Autofillingoogleforms
 
-Automatización llenado google forms
+Automatización diligenciamiento Google Forms.
 
 Requerimientos:
 
-* Python 3.8 o superior
+* **Python 3.8 o superior**
 
-* Paquetes:
-- gspread
-- oauth2client
-- selenium
-- pyunitreport
+* **Paquetes**:
 
-usa pip3 para installar estos paquetes, en caso de que alguno
-no se instale correctamente, usa el comando sudo.
-Si no funciona, usa simplemente pip en vez de pip3.
+  Usa pip o pip3 para installar los paquetes. 
+  
+  Si tienes problemas durante la instalación, usa el comando sudo.
+  
+  > sudo pip3 install packageName
 
-* Google Cloud Account - Free
-- Habilita el recurso Google Sheets API
-- Habilita el recurso Google Drive API
+  -  gspread
+
+  -  oauth2client
+
+  -  selenium
+
+  -  pyunitreport
+
+
+
+
+* **Google Cloud - Free Account**
+
+  -  Habilita el recurso Google Sheets API
+   
+  -  Habilita el recurso Google Drive API
+  
+  -  En la configuración de Google Sheets crea una credencial - Cuenta de Servicio - Crea una key o llave JWT - Descarga el archivo .json y añadelo dentro de la carpeta creds
+
 
 ## Ejecución
 
