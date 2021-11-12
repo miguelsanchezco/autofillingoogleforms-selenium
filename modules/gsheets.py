@@ -3,7 +3,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 # Edita los siguientes 2 valores para ajustarlo a tus necesidades
-GOOGLE_SHEET_NAME = "Daily-Infinity-CONSOLIDADO"
+GOOGLE_SHEET_NAME = "Daily-CONSOLIDADO"
 CREDS_GOOGLE_CLOUD_FILE_PATH = './creds/credsGoogleCloud.json'
 # ATENCION: dentro del archivo .json encontrarás un email,
 # añade este email como usuario que puede modificar tu hoja de google sheets 
@@ -22,7 +22,9 @@ def gsheets():
     dictionary = {}
 
     # data_sheet is used to access to the data
-    data_sheet = client.open(GOOGLE_SHEET_NAME).sheet1
+    sht = client.open(GOOGLE_SHEET_NAME)
+    data_sheet = sht.get_worksheet(0)
+    #data_sheet = client.open(GOOGLE_SHEET_NAME).sheet1
     # You should replace de name 'Daily-Infinity-CONSOLIDADO' for 
     # your own google sheets name file ***
 
